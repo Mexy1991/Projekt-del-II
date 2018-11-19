@@ -1,56 +1,39 @@
-public class Event{
+public class Event {
+	private char eventType;
+	private double timestamp;
+	private Individiual reference;
 
-public static final char DEATH = 'd';
-public static final char MUTATION = 'm';
-public static final char REPRODUCTION = 'r';
-public Event[] event = new Event[3]; 
-
-
-public Event(char charType, double doubleTime, Indiviual newIndividual){
-
-	this.event[0] = char(chartype)
-	this.event[1] = double(doubleTime)
-	this.event[2] =	Individual(newIndividual)
+	public Event(char type, double time, Individual refer){
+		eventType = type;
+		timestamp = time;
+		reference = refer;
+	}
 
 	public char type(){
-	
-	
-	return;
-	
+	return(type);
 	}
-    
+
 	public double time(){
-	
-	return;
-	
+	return(time);
 	}
-    
+
 	public Individual individual(){
-	
-	return;
-	
+	return(reference);
 	}
-	
+
 	public String toString(){
-
-			string eve = "event type";
+		string txt = "insert text ";
 		switch(event){
-			case'd': 
-			eventType = eve + "DEATH";
-			break;
-			
-			case'm': 
-			eventType = eve + "MUTATION";
-			break;
-			
-			case 'r': 
-			eventType = eve + "REPRODUKTION";
-			break;
+			case'd':
+				eventType = txt + "DEATH";
+				break;
+			case'm':
+				eventType = txt + "MUTATION";
+				break;
+			case 'r':
+				eventType = txt + "REPRODUKTION";
+				break;
 		}
-
-			return eventType + time +Indidual;
-
-
+		return(eventType + time +Indidual);
 	}
-
 }
