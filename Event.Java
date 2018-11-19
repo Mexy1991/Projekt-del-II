@@ -10,11 +10,11 @@ public class Event {
 	}
 
 	public char type(){
-	return(type);
+	return(eventType);
 	}
 
 	public double time(){
-	return(time);
+	return(timestamp);
 	}
 
 	public Individual individual(){
