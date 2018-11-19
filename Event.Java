@@ -22,18 +22,21 @@ public class Event {
 	}
 
 	public String toString(){
-		string txt = "insert text ";
-		switch(event){
+		string eventText = "Event type: ";
+		string finalText;
+		//Event type: mutation; time: 9.192599780944755
+		switch(eventType){
 			case'd':
-				eventType = txt + "DEATH";
+				finalText += eventText + "death; ";
 				break;
 			case'm':
-				eventType = txt + "MUTATION";
+				finalText += eventText + "mutation; ";
 				break;
 			case 'r':
-				eventType = txt + "REPRODUKTION";
+				finalText += txt + "reproduction; ";
 				break;
 		}
-		return(eventType + time +Indidual);
+		finalText += "time: " + timestamp;
+		return(finalText);
 	}
 }
