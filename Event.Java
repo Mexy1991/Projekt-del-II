@@ -3,7 +3,7 @@ public class Event{
 public static final char DEATH = 'd';
 public static final char MUTATION = 'm';
 public static final char REPRODUCTION = 'r';
-public object[] event = new object[3]; 
+public Event[] event = new Event[3]; 
 }
 
 public Event(){
@@ -14,7 +14,7 @@ public Event(){
 
 	public char type(char, double , Indiviual){
 	
-	return
+	return;
 	
 	}
     
@@ -22,23 +22,23 @@ public Event(){
 	
 	public double time(){
 	
-	return
+	return;
 	
 	}
     
 	public Individual individual(){
 	
-	return
+	return;
 	
 	}
 	
 	public string toString(){
-	
-	case'd'
-	
-	case'm'
-	
-	case 'r'
+
+		switch(event){
+			case'd': break;
+			case'm': break;
+			case 'r': break;
+		}
 
 	}
 
