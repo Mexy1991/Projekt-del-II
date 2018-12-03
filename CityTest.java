@@ -30,6 +30,5 @@ public class CityTest{
     } else {
       System.out.println("FAIL: yTest");
     }
-
   }
 }
