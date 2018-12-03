@@ -1,13 +1,13 @@
 public class CityTest{
   public static void main(String[] args){
-    City Copenhagen = new City("Copenhagen", -20, 30);
-    City Kolding = new City("Kolding", -100, -216605);
+    City Copenhagen = new City("Copenhagen", 4, 20);
+    City Kolding = new City("Kolding", 4, 2);
 
     // Check if distance is positive
-    if(Copenhagen.distanceTo(Kolding) > 0){
-      System.out.println("Pass: distancePositiveTest");
+    if(Copenhagen.distanceTo(Kolding) == 18){
+      System.out.println("Pass: distanceTest");
     } else {
-      System.out.println("FAIL: distancePositiveTest");
+      System.out.println("FAIL: distanceTest");
     }
 
     // Check if the getter for name returns correct output

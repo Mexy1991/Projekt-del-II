@@ -41,7 +41,6 @@ public class Individual{
   public void mutate(){
       int indexOne = RandomUtils.getRandomValue(path.length);
       int indexTwo = RandomUtils.getRandomValue(path.length);
-      System.out.println("Random Number #1: " + String.valueOf(indexOne) + " Random Number #2: " + String.valueOf(indexTwo));
       City placeholder = new City(path[indexOne].name(), path[indexOne].x(), path[indexOne].y());
       path[indexOne] = path[indexTwo];
       path[indexTwo] = placeholder;
@@ -49,9 +48,8 @@ public class Individual{
 
   // Produces a new descendant Individual varying from this.Individual by one mutation.
   public Individual reproduce(){
-    City[] emptyPath = new City[0];
-    Individual newBoy = new Individual(emptyPath);
-    newBoy.setPath(this.path());
+    Individual newBoy = new Individual(new City[0]);
+    newBoy.setPath(path());
     newBoy.mutate();
     return(newBoy);
   }
