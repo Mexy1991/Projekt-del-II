@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.util.*;
 
 public class Individual{
@@ -88,3 +89,10 @@ public class Individual{
     return(newBoy);
   }
 }
+=======
+public class Individual{
+	
+
+	
+}
+>>>>>>> ef8eecb61c79937de0e7a04bd931cf99999327e3
