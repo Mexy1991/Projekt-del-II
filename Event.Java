@@ -1,7 +1,7 @@
 public class Event {
 	private char eventType;
 	private double timestamp;
-	private Individiual reference;
+	private Individual reference;
 
 	public Event(char type, double time, Individual refer){
 		eventType = type;
@@ -22,8 +22,8 @@ public class Event {
 	}
 
 	public String toString(){
-		string eventText = "Event type: ";
-		string finalText;
+		String eventText = "Event type: ";
+		String finalText = "";
 		//Event type: mutation; time: 9.192599780944755
 		switch(eventType){
 			case'd':
@@ -33,7 +33,7 @@ public class Event {
 				finalText += eventText + "mutation; ";
 				break;
 			case 'r':
-				finalText += txt + "reproduction; ";
+				finalText += eventText + "reproduction; ";
 				break;
 		}
 		finalText += "time: " + timestamp;

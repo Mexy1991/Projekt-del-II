@@ -38,6 +38,7 @@ public class Simulator{
 		if((simulationMode == 1) || (simulationMode == 2)){
 			System.out.print("Interval between observations: ");
 			initInterval = Reader.nextInt();
+			// Dependent on simulationMode. Only used if simulationMode == (1||2)
 			countInterval = initInterval;
 			countEvents = 0;
 		}
@@ -215,7 +216,7 @@ public class Simulator{
 		System.out.println("Current time: " + currentTime);
 		System.out.println("Events Simulated: " + countEvents);
 		System.out.println("Population size: " + pop.size());
-		System.out.println("The best path is: " + bestPathString(pop.bestPath()) + " (cost: " + pathCost(new Individual(pop.bestPath())) + ")");
+		System.out.println("Best Path:	 " + bestPathString(pop.bestPath()) + " (cost: " + pathCost(new Individual(pop.bestPath())) + ")");
 	}
 
 	private static void endSimulation(){

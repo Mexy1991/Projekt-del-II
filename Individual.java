@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import java.util.*;
 
 public class Individual{
@@ -6,32 +5,29 @@ public class Individual{
   private double cost = 0;
 
   /*
-  * Main to test each function
+  * Main to test each method of Individual.class
   */
   public static void main(String[] args){
     City cityOne = new City("Copenhagen", 2, 3);
     City cityTwo = new City("Kolding", 6, 19);
     City cityThree = new City("Budapest", 500, 206);
     City[] cities  = new City[3];
-
     cities[0] = cityOne;
     cities[1] = cityTwo;
     cities[2] = cityThree;
 
-    // This is how the City[] looks before we use put it into an Individual
+    // This is how the City[] looks before we use it in an Individual
     for(City myCity : cities){
       System.out.println(myCity.name());
     }
+    System.out.println("----------------\n");
 
-    System.out.println("\n----------------\n");
-
-    // This should show a random permutation of Individual
+    // This should show a random permutation of the above City[]
     Individual me = new Individual(cities);
     for(City myCity : me.path()){
       System.out.println(myCity.name());
     }
-
-    System.out.println("\n----------------\n");
+    System.out.println("----------------\n");
 
     /*
     *This should show a mutation of the previous Individual.
@@ -42,8 +38,17 @@ public class Individual{
       System.out.println(myCity.name());
     }
     System.out.println("Cost of Path: " + me.cost());
-  }
+    System.out.println("----------------\n");
 
+    /*
+    * This should show a new Individual differing from the ancestor by one mutation
+    */
+    Individual myDescendant = me.reproduce();
+    for(City myCity : myDescendant.path()){
+      System.out.println(myCity.name());
+    }
+    System.out.println("Cost of Path: " + myDescendant.cost());
+  }
 
   /*
   * Creates random permutation of given City[] and constructs new Individual from it
@@ -58,8 +63,14 @@ public class Individual{
     }
   }
 
+  // Getter for path
   public City[] path(){
     return(path);
+  }
+
+  // Setter for path
+  private void setPath(City[] newPath){
+    path = newPath;
   }
 
   // Returns cost of distance between all cities in path.
@@ -82,17 +93,12 @@ public class Individual{
       path[indexTwo] = placeholder;
   }
 
-  // Produces a new Individual varying by one mutation.
+  // Produces a new descendant Individual varying from this.Individual by one mutation.
   public Individual reproduce(){
-    mutate();
-    Individual newBoy = new Individual(path);
+    City[] emptyPath = new City[0];
+    Individual newBoy = new Individual(emptyPath);
+    newBoy.setPath(this.path());
+    newBoy.mutate();
     return(newBoy);
   }
 }
-=======
-public class Individual{
-	
-
-	
-}
->>>>>>> ef8eecb61c79937de0e7a04bd931cf99999327e3
