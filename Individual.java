@@ -5,52 +5,6 @@ public class Individual{
   private double cost = 0;
 
   /*
-  * Main to test each method of Individual.class
-  */
-  public static void main(String[] args){
-    City cityOne = new City("Copenhagen", 2, 3);
-    City cityTwo = new City("Kolding", 6, 19);
-    City cityThree = new City("Budapest", 500, 206);
-    City[] cities  = new City[3];
-    cities[0] = cityOne;
-    cities[1] = cityTwo;
-    cities[2] = cityThree;
-
-    // This is how the City[] looks before we use it in an Individual
-    for(City myCity : cities){
-      System.out.println(myCity.name());
-    }
-    System.out.println("----------------\n");
-
-    // This should show a random permutation of the above City[]
-    Individual me = new Individual(cities);
-    for(City myCity : me.path()){
-      System.out.println(myCity.name());
-    }
-    System.out.println("----------------\n");
-
-    /*
-    *This should show a mutation of the previous Individual.
-    *(cities can switch with themselves, so may not show any change)
-    */
-    me.mutate();
-    for(City myCity : me.path()){
-      System.out.println(myCity.name());
-    }
-    System.out.println("Cost of Path: " + me.cost());
-    System.out.println("----------------\n");
-
-    /*
-    * This should show a new Individual differing from the ancestor by one mutation
-    */
-    Individual myDescendant = me.reproduce();
-    for(City myCity : myDescendant.path()){
-      System.out.println(myCity.name());
-    }
-    System.out.println("Cost of Path: " + myDescendant.cost());
-  }
-
-  /*
   * Creates random permutation of given City[] and constructs new Individual from it
   */
   public Individual(City[] originalPath){
@@ -69,7 +23,7 @@ public class Individual{
   }
 
   // Setter for path
-  private void setPath(City[] newPath){
+  public void setPath(City[] newPath){
     path = newPath;
   }
 
